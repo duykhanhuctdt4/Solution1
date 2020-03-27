@@ -4,7 +4,6 @@ using System.Text;
 
 namespace DuyKhanhSolution1.Data.Entities
 {
-{
     public class OrderDetail
     {
 
