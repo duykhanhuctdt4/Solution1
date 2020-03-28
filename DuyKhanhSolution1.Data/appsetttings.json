@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionString": {
+    "DuyKhanhSolutionDb": "Server=(localdb)\\mssqllocaldb;Database=DuyKhanhShop;Trusted_Connection=True;"
+  }
+}
