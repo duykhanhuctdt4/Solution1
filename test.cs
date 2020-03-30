@@ -851,20 +851,7 @@ namespace Kyoto.GUI
                 return -1;
             }
             valueAjust1 = this.Excess_processing_Size_A_From_A_B_KTGC(cboMaterial, cboShape, valueInput1, valueInput2, valueDoNham_KTGC1, valueDoNham1);
-
-            // Tra Lượng dư cho kích thước B
-            if (cboShape_StrIndex.Equals("01"))
-            {
-                if (valueDoNham2 == 1) // ĐỘ NHÁM  = 1
-                {
-                    valueAjust2 = 1;
-                }
-                //====================================
-                if (valueDoNham2 == 2) // ĐỘ NHÁM  = 2
-                {
-                    valueAjust2 = 2;
-                }
-            }
+            valueAjust2 = this.Excess_processing_SizeB_From_B(cboMaterial, cboShape, valueDoNham2);
             //===================================================================================================================
             // Data analyzed
             DataTable dt_A = manuTypeBus.getDataTableWHERE_LIKE_VALUE("SIZE1_2", "MATERIAL_TO_SHAPE", String.Format("{0}_{1}", cboMaterial_StrIndex, cboShape_StrIndex));
@@ -1544,6 +1531,24 @@ namespace Kyoto.GUI
             }
         }
 
+        private double Excess_processing_SizeB_From_B(ComboBox cboMaterial, ComboBox cboShape ,double valueDoNham)
+        {
+            string cboShape_StrIndex = splitString(getSelectedTextCombobox(getSelectedItemComboboxTxt(cboShape)), ":", 0);
+            // Tra Lượng dư cho kích thước B
+            if (cboShape_StrIndex.Equals("01"))
+            {
+                if (valueDoNham == 1) // ĐỘ NHÁM  = 1
+                {
+                    return 1;
+                }
+                //====================================
+                if (valueDoNham == 2) // ĐỘ NHÁM  = 2
+                {
+                    return 2;
+                }
+            }
+            return 0;
+        }
         private double Excess_processing_Size_A_From_A_B_KTGC(ComboBox cboMaterial, ComboBox cboShape, double kichthuocA, double kichthuocB, double KTGC, double valueDoNham)
         {
             string cboMaterial_StrIndex = splitString(getSelectedTextCombobox(getSelectedItemComboboxTxt(cboMaterial)), ":", 0);
