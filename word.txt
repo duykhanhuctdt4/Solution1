@@ -1,0 +1,14 @@
+TRANSCOSMOS TCV WEB
+
+
+Programing language: Python3 M-C-V ( Model – View – Controller)
+Framework: Django3
+Database design: Code First
+IDE in Raspberry: None IDE (Notepad ++) (If you code in window .You can use Pycharm
+Author: Phạm Duy Khánh
+ 
+
+I.	Setup environment 
+
+
+
