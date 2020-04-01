@@ -1,5 +1,6 @@
 ﻿using DuyKhanhSolution1.Data.Configurations;
 using DuyKhanhSolution1.Data.Entities;
+using DuyKhanhSolution1.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,9 @@ namespace DuyKhanhSolution1.Data.EF
             modelBuilder.ApplyConfiguration(new ProductTranslationConfiguration());
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
+            // Data seeding
+            modelBuilder.Seed();
+
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
