@@ -4,14 +4,16 @@ using DuyKhanhSolution1.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DuyKhanhSolution1.Data.Migrations
 {
     [DbContext(typeof(DuyKhanhShopDBContext))]
-    partial class DuyKhanhShopDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200401184950_initial_6")]
+    partial class initial_6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -292,7 +294,7 @@ namespace DuyKhanhSolution1.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 4, 2, 1, 55, 15, 804, DateTimeKind.Local).AddTicks(3363));
+                        .HasDefaultValue(new DateTime(2020, 4, 2, 1, 49, 49, 988, DateTimeKind.Local).AddTicks(9684));
 
                     b.Property<string>("ShipAddress")
                         .IsRequired()
@@ -384,7 +386,7 @@ namespace DuyKhanhSolution1.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreate = new DateTime(2020, 4, 2, 1, 55, 15, 816, DateTimeKind.Local).AddTicks(5587),
+                            DateCreate = new DateTime(2020, 4, 2, 1, 49, 50, 1, DateTimeKind.Local).AddTicks(1720),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
