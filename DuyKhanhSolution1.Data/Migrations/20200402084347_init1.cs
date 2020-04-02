@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DuyKhanhSolution1.Data.Migrations
 {
-    public partial class initial : Migration
+    public partial class init1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -71,7 +71,7 @@ namespace DuyKhanhSolution1.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    OrderDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2020, 3, 29, 21, 3, 38, 463, DateTimeKind.Local).AddTicks(2974)),
+                    OrderDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2020, 4, 2, 15, 43, 47, 151, DateTimeKind.Local).AddTicks(8799)),
                     UserId = table.Column<Guid>(nullable: false),
                     ShipName = table.Column<string>(maxLength: 200, nullable: false),
                     ShipAddress = table.Column<string>(maxLength: 200, nullable: false),
@@ -276,6 +276,64 @@ namespace DuyKhanhSolution1.Data.Migrations
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AppConfigs",
+                columns: new[] { "Key", "Value" },
+                values: new object[,]
+                {
+                    { "HomeTitle", "Config1" },
+                    { "HomeKeyword", "Config2" },
+                    { "HomeDescription", "Config3" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "IsShowHome", "ParentId", "SortOrder", "Status" },
+                values: new object[,]
+                {
+                    { 1, true, null, 1, 1 },
+                    { 2, true, null, 2, 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Languages",
+                columns: new[] { "Id", "IsDefault", "Name" },
+                values: new object[,]
+                {
+                    { "vi-VN", true, "Tieng Viet" },
+                    { "en-US", false, "English" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "DateCreate", "OriginalPrice", "Price", "SeoAlias" },
+                values: new object[] { 1, new DateTime(2020, 4, 2, 15, 43, 47, 163, DateTimeKind.Local).AddTicks(9703), 100000m, 200000m, null });
+
+            migrationBuilder.InsertData(
+                table: "CategoryTranslations",
+                columns: new[] { "Id", "CategoryId", "LanguageId", "Name", "SeoAlias", "SeoDescription", "SeoTitle" },
+                values: new object[,]
+                {
+                    { 1, 1, "vi-VN", "Áo Nam", "ao-nam", "Sản Phẩm Aó Thời Trang Nam", "Sản Phẩm Aó Thời Trang Nam" },
+                    { 3, 2, "vi-VN", "Áo Nữ", "ao-nu", "Sản Phẩm Aó Thời Trang Nữ", "Sản Phẩm Aó Thời Trang Nữ" },
+                    { 2, 1, "en-US", "Man Shirt", "man-shirt", "The shirt products for man", "The shirt products for man" },
+                    { 4, 2, "en-US", "Woman Shirt", "woman-shirt", "The shirt products for woman", "The shirt products for woman" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ProductInCategories",
+                columns: new[] { "CategoryId", "ProductId" },
+                values: new object[] { 1, 1 });
+
+            migrationBuilder.InsertData(
+                table: "ProductTranslations",
+                columns: new[] { "Id", "Description", "Details", "LanguageId", "Name", "ProductId", "SeoAlias", "SeoDescription", "SeoTitle" },
+                values: new object[,]
+                {
+                    { 1, "", "Áo sơ mi trắng việt tiến nam", "vi-VN", "Áo sơ mi trắng Việt Tiến", 1, "ao-so-mi-nam-viet_tien", "áo trắng nam việt tiến", "Áo sơ mi trắng việt tiến nam" },
+                    { 2, "", "fucked ao so mi viet tien", "en-US", "Men Shirt Viet Tien", 1, "men-shirt-viet-tien", "The shirt products viet tien for men", "The shirt viet tien products for men" }
                 });
 
             migrationBuilder.CreateIndex(

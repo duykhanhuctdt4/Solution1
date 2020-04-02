@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DuyKhanhSolution1.Data.Migrations
 {
     [DbContext(typeof(DuyKhanhShopDBContext))]
-    [Migration("20200401184858_initial_5")]
-    partial class initial_5
+    [Migration("20200402084347_init1")]
+    partial class init1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -294,7 +294,7 @@ namespace DuyKhanhSolution1.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 4, 2, 1, 48, 57, 938, DateTimeKind.Local).AddTicks(459));
+                        .HasDefaultValue(new DateTime(2020, 4, 2, 15, 43, 47, 151, DateTimeKind.Local).AddTicks(8799));
 
                     b.Property<string>("ShipAddress")
                         .IsRequired()
@@ -386,7 +386,7 @@ namespace DuyKhanhSolution1.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreate = new DateTime(2020, 4, 2, 1, 48, 57, 949, DateTimeKind.Local).AddTicks(9544),
+                            DateCreate = new DateTime(2020, 4, 2, 15, 43, 47, 163, DateTimeKind.Local).AddTicks(9703),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,

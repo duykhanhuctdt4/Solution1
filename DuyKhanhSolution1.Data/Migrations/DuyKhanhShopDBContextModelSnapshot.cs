@@ -292,7 +292,7 @@ namespace DuyKhanhSolution1.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 4, 2, 1, 55, 15, 804, DateTimeKind.Local).AddTicks(3363));
+                        .HasDefaultValue(new DateTime(2020, 4, 2, 15, 43, 47, 151, DateTimeKind.Local).AddTicks(8799));
 
                     b.Property<string>("ShipAddress")
                         .IsRequired()
@@ -384,7 +384,7 @@ namespace DuyKhanhSolution1.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreate = new DateTime(2020, 4, 2, 1, 55, 15, 816, DateTimeKind.Local).AddTicks(5587),
+                            DateCreate = new DateTime(2020, 4, 2, 15, 43, 47, 163, DateTimeKind.Local).AddTicks(9703),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
