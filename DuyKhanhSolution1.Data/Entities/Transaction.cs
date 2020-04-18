@@ -18,5 +18,8 @@ namespace DuyKhanhSolution1.Data.Entities
         public TransactionStatus Status { set; get; }
         public string Provider { set; get; }
 
+        public Guid UserId { get; set; }
+        public AppUser AppUser { get; set; }
+
     }
 }

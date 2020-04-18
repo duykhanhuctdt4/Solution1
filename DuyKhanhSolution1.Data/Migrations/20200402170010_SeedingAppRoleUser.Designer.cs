@@ -4,14 +4,16 @@ using DuyKhanhSolution1.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DuyKhanhSolution1.Data.Migrations
 {
     [DbContext(typeof(DuyKhanhShopDBContext))]
-    partial class DuyKhanhShopDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200402170010_SeedingAppRoleUser")]
+    partial class SeedingAppRoleUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,7 +80,7 @@ namespace DuyKhanhSolution1.Data.Migrations
                         new
                         {
                             Id = new Guid("f8483347-1086-458e-a0e7-5d9351503b1b"),
-                            ConcurrencyStamp = "ca4ce130-64e4-432d-97dc-d168b136e172",
+                            ConcurrencyStamp = "99c191ef-534b-40c4-b7ac-a61c98e7c562",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -155,7 +157,7 @@ namespace DuyKhanhSolution1.Data.Migrations
                         {
                             Id = new Guid("f42202b3-0e97-431c-a703-0f164ee61d9e"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1b212661-438e-42a3-8000-5c8995a82722",
+                            ConcurrencyStamp = "df51a5db-8816-47bc-98bf-b64d52aaf53e",
                             Dob = new DateTime(2020, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "duykhanhdeveloper93@gmail.com",
                             EmailConfirmed = true,
@@ -164,7 +166,7 @@ namespace DuyKhanhSolution1.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "duykhanhdeveloper93@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEK4xOoHr5X/FbgmB5ZNxpf+I3CcvX4V28n5M4oArA84W65KWHVf7HQzh+lsOEnj8Wg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJochTNpapB2guq+tmPpYVDcNEWbTYSIhgEKwfQmjdqEA1dZKyOM5K9hy/KPmfatow==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -419,7 +421,7 @@ namespace DuyKhanhSolution1.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 4, 18, 14, 45, 32, 568, DateTimeKind.Local).AddTicks(2595));
+                        .HasDefaultValue(new DateTime(2020, 4, 3, 0, 0, 9, 654, DateTimeKind.Local).AddTicks(4074));
 
                     b.Property<string>("ShipAddress")
                         .IsRequired()
@@ -513,7 +515,7 @@ namespace DuyKhanhSolution1.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreate = new DateTime(2020, 4, 18, 14, 45, 32, 584, DateTimeKind.Local).AddTicks(1552),
+                            DateCreate = new DateTime(2020, 4, 3, 0, 0, 9, 668, DateTimeKind.Local).AddTicks(9862),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,

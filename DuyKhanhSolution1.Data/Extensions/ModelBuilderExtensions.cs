@@ -1,5 +1,6 @@
 ﻿using DuyKhanhSolution1.Data.Entities;
 using DuyKhanhSolution1.Data.Enums;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -123,8 +124,39 @@ namespace DuyKhanhSolution1.Data.Extensions
                     new  ProductInCategory() { ProductId =1,CategoryId = 1}
                 );
 
+            var roleId = new Guid("F42202B3-0E97-431C-A703-0F164EE61D9E");
+            var adminId = new Guid("F8483347-1086-458E-A0E7-5D9351503B1B");
+            // any guid, but nothing is to use the same 
+            modelBuilder.Entity<AppRole>().HasData(new AppRole
+            {
+                Id = adminId,
+                Name = "admin",
+                NormalizedName = "admin",
+                Description = "Administrator role"
+            });
 
-            
+            var hasher = new PasswordHasher<AppUser>();
+            modelBuilder.Entity<AppUser>().HasData(new AppUser
+            {
+                Id = roleId,
+                UserName = "admin",
+                NormalizedUserName = "admin",
+                Email = "duykhanhdeveloper93@gmail.com",
+                NormalizedEmail = "duykhanhdeveloper93@gmail.com",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "@1234512345"),
+                SecurityStamp = string.Empty,
+                FirstName ="Duy Khanh",
+                LastName = "Pham",
+                Dob = new DateTime(2020,3,3)
+            });
+
+            modelBuilder.Entity<IdentityUserRole<Guid>>().HasData(new IdentityUserRole<Guid>
+            {
+                RoleId = roleId,
+                UserId = adminId
+            });
+
 
         }
     }
