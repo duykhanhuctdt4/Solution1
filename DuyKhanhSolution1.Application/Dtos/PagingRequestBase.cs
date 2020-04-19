@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DuyKhanhSolution1.Application.Dtos
 {
-    public class PageViewModel<T>
+    public class PagingRequestBase
     {
-        public List<T> Items { get; set; }
-        public int TotalRecord { get; set; }
+        public int PageIndex { get; set; }
+        public int PageSize { get; set; }
     }
 }
