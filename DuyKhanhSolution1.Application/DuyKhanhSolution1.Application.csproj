@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DuyKhanhShop.Ultilities\DuyKhanhShop.Ultilities.csproj" />
     <ProjectReference Include="..\DuyKhanhSolution1.Data\DuyKhanhSolution1.Data.csproj" />
   </ItemGroup>
 
